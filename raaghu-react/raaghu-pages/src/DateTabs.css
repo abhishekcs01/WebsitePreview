@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.date-tabs button {
+    border-radius: 0;
+}
+
+.date-tabs button:first-child {
+    background-color: #6610f2;
+    border-color: #6610f2;
+}
+
+.date-tabs button:not(:first-child) {
+    color: #666;
+    background-color: white;
+    border-color: #dee2e6;
+    border-bottom: none;
+}

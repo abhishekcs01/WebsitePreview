@@ -1,0 +1,121 @@
+.rds-sidebar {
+  width: 240px;
+  background-color: transparent;
+  padding: 15px;
+  transition: width 0.3s ease;
+}
+
+.rds-sidebar.collapsed {
+  width: 60px;
+}
+
+.background-color {
+  background: linear-gradient(180deg, #DCF4F7 0%, #FFECEC 100%);
+}
+
+/* Button styling */
+.wide-button {
+  width: 100%;
+}
+
+.collapsed-button {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Top section - New Chat button */
+.chat-input-container {
+  margin-top: 60px;  
+}
+
+/* Cards for grouping nav items */
+.recents-dashboard {
+  background: #FFFFFF;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Container for each nav item */
+.dashboard {
+  padding: 5px 0;
+}
+
+/* Section headers */
+.section-header {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Collapse/expand button positioning */
+.icon-wrapper {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.rds-sidebar.collapsed .icon-wrapper {
+  left: 0;
+}
+
+/* Button styling adjustments */
+.btn.outline-hover {
+  min-width: 210px !important;
+  text-align: left;
+}
+
+.rds-sidebar.collapsed .btn.outline-hover {
+  min-width: 40px !important;
+  justify-content: center;
+}
+
+.btn.transparent-hover {
+  color: #353535 !important;
+  text-align: left;
+}
+
+/* Icons for specific buttons */
+.theme-light svg, .theme-dark #saas_chats svg {
+  stroke: none !important;
+}
+
+/* Fix for recents icon */
+.icon-recents_icon, .icon-recent {
+  color: #007bff !important;
+  fill: #007bff !important;
+  stroke: none !important;
+}
+
+.recent-icon svg {
+  stroke: none !important;
+  fill: #007bff !important;
+}
+
+.btn-icon.btn-md {
+  padding: 0;
+  width: 32px !important;
+  height: 35px;
+}
+
+/* Remove text capitalization */
+.btn {
+  text-transform: none !important;
+}
+
+/* Ensure proper spacing in collapsed state */
+.rds-sidebar.collapsed .recents-dashboard .recents, 
+.rds-sidebar.collapsed .recents-dashboard .dashboard, 
+.rds-sidebar.collapsed .chat-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard .btn {
+  min-width :0rem !important;
+}
+.dashboard .btn-md svg{
+  stroke: none !important;
+}

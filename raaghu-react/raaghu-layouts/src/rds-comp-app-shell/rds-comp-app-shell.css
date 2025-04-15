@@ -1,0 +1,21 @@
+.Default {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Optional, to hide any content that exceeds the viewport */
+  display: flex;
+}
+
+
+.Default #sidebar{
+  height: 100vh !important;
+}
+
+.Default .sidebar-layout{
+  width: fit-content;
+}
+
+.Default .topnav-layout{
+  width: 100%;
+}
