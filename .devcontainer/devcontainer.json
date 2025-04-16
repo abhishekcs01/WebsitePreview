@@ -5,7 +5,7 @@
   "onCreateCommand": "npm install -g chokidar && cd /workspaces/WebsitePreview/raaghu-react && npm run install-all && cd raaghu-react-themes && npm install && npm run build",
   "postAttachCommand": {
     "dev-server": "bash -c 'cd /workspaces/WebsitePreview/raaghu-react/raaghu-pages && npm run dev'",
-    "file-sync": "node /workspaces/WebsitePreview/file-sync-service.js"
+    "file-sync": "npm install -g chokidar && node /workspaces/WebsitePreview/file-sync-service.js"
   },
   "portsAttributes": {
     "5173": {
