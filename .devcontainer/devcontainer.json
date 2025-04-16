@@ -1,16 +1,17 @@
 {
   "name": "Raaghu React Preview",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
-  "forwardPorts": [3000,5173],
+  "forwardPorts": [3000, 5173],
   "updateContentCommand": "npm install -g chokidar",
-  "postAttachCommand": {
-    "dev-server": "bash -c 'cd /workspaces/Preview-Website/raaghu-react && npm run install-all && cd raaghu-react-themes && npm install && npm run build && cd .. && cd raaghu-pages && npm run dev'",
-    "file-sync": "node /workspaces/Preview-Website/file-sync-service.js"
-  },
+  "postCreateCommand": "cd /workspaces/Preview-Website/raaghu-react && npm run install-all && cd raaghu-react-themes && npm install && npm run build",
+  "postAttachCommand": "node /workspaces/Preview-Website/file-sync-service.js",
   "portsAttributes": {
     "5173": {
       "label": "Application",
       "onAutoForward": "openBrowser"
     }
-  }
+  },
+  "mounts": [
+    "source=npm-cache,target=/root/.npm,type=volume"
+  ]
 }
