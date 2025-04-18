@@ -1,24 +1,22 @@
 {
   "name": "Raaghu React Preview",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
-  "forwardPorts": [3000, 5173, 8080],
+  "forwardPorts": [5173, 8080],
   "onCreateCommand": "npm install -g chokidar && cd /workspaces/WebsitePreview/raaghu-react && npm run install-all && cd raaghu-react-themes && npm install && npm run build",
   "postStartCommand": "npm list -g chokidar || npm install -g chokidar",
   "postAttachCommand": {
     "dev-server": "bash -c 'cd /workspaces/WebsitePreview/raaghu-react/raaghu-pages && npm run dev'",
     "file-sync": "node /workspaces/WebsitePreview/file-sync-service.js",
-    "run-server": "node /workspaces/WebsitePreview/server.js"
+    "run-server": "git pull origin main && node /workspaces/WebsitePreview/server.js"
   },
   "portsAttributes": {
     "5173": {
       "label": "Vite App",
-      "onAutoForward": "openBrowser",
-      "visibility": "public"
+      "onAutoForward": "openBrowser"
     },
     "8080": {
       "label": "Server",
-      "onAutoForward": "openBrowser",
-      "visibility": "public"
+      "onAutoForward": "openBrowser"
     }
   },
   "mounts": [
