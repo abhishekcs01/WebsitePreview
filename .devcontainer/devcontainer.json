@@ -1,26 +1,38 @@
 {
   "name": "Raaghu React Preview",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
-  "forwardPorts": [5173, 8080],
-  "onCreateCommand": "npm install -g chokidar && cd /workspaces/WebsitePreview/raaghu-react && npm run install-all && cd raaghu-react-themes && npm install && npm run build",
-  "postStartCommand": "npm list -g chokidar || npm install -g chokidar",
-  "postAttachCommand": {
-    "dev-server": "bash -c 'cd /workspaces/WebsitePreview/raaghu-react/raaghu-pages && npm run dev'",
-    "file-sync": "node /workspaces/WebsitePreview/file-sync-service.js",
-    "run-server": "git pull origin main && node /workspaces/WebsitePreview/server.js"
-  },
+  "forwardPorts": [
+    5173,
+    8080
+  ],
+  "onCreateCommand": "chmod +x /workspaces/AI-Pundit-Preview/scripts/startup.sh",
+  "postAttachCommand": "bash /workspaces/AI-Pundit-Preview/scripts/startup.sh",
   "portsAttributes": {
     "5173": {
       "label": "Vite App",
       "onAutoForward": "openBrowser"
     },
     "8080": {
-      "label": "Server",
+      "label": "Backend Server",
       "onAutoForward": "openBrowser"
     }
   },
   "mounts": [
     "source=npm-cache,target=/root/.npm,type=volume",
-    "source=websitepreview-node-modules,target=/workspaces/WebsitePreview/node_modules,type=volume"
-  ]
+    "source=AI-Pundit-Preview-node-modules,target=/workspaces/AI-Pundit-Preview/node_modules,type=volume"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
 }
